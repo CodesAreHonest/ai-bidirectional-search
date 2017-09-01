@@ -1,0 +1,6 @@
+(defun goaltest(node goal)
+  (if (equal node goal)
+      (return-from goaltest 'T)
+      (return-from goaltest 'NIL)
+  )
+)
