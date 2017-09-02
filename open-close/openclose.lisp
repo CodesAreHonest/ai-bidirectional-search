@@ -64,8 +64,12 @@
 (defmethod insert-back-open (element)
   (setf (open-list open) (reverse (cons element (reverse (open-list open))))))
 
-;;; ----------------------------------------------------
-;;; Functions (Getter) : Return number of length in list
-;;; ----------------------------------------------------
-(defmethod length-list (list)
-    (length list))
+;;; --------------------------------------------
+;;; Functions (Setter): open-list-length
+;;; --------------------------------------------
+;;; Input: NONE
+;;; Output: Return number of element in open list 
+;;; --------------------------------------------
+
+(defmethod open-list-length ()
+    (length (open-list open)))
