@@ -3,27 +3,69 @@
 ;;; Function: Open List in CLOS 
 ;;; -----------------------------------
 
+;;; -----------------------------------------
+;;; Class: Open List  
+;;; -----------------------------------------
+;;; Description: Explore and stores new nodes
+;;; Accessor/Slot-value: open-list
+;;; -----------------------------------------
+
 (defclass openlist ()
-  ((open-list   :accessor   open-list      :initarg :open-list)))
+  ((open-list         
+    :initarg :open-list
+    :accessor   open-list )))
+
+
+;;; -------------------------------------------------------
+;;; Class: Close List
+;;; Description: Stores node discovered for prevent duplication
+;;; --------------------------------------------------------
 
 (defclass closelist ()
   ((close-list   :accessor   close-list      :initarg :close-list)))
 
-;;; ------------------------------------------
-;;; Instantiate object as open and close list  
-;;; -----------------------------------------
+;;; ------------------------------------------------
+;;; Function: Instantiate open list and close list
+;;; ------------------------------------------------
+;;; Description: 
+;;;     open - instance of standard class openlist 
+;;;     close - instance of standard class closelist
+;;; ------------------------------------------------
 
-;;;(setf olist (make-instance 'openlist :open-list '()))
-;;;(setf clist (make-instance 'closelist :close-list '()))
+(defun make-open-list (start) 
+  (setf open (make-instance 'openlist  :open-list (make-list 1 :initial-element 'start))))
 
-;;; ------------------------------------------
-;;; Functions for insert-front 
-;;; -----------------------------------------
-(defmethod insert-front (element list)
-  (push element list))
+(defun make-close-list() 
+  (setf close (make-instance 'closelist  :close-list '())))
 
-;;; ------------------------------------------
-;;; Functions for insert-back
-;;; -----------------------------------------
-(defmethod insert-back (element list)
-  (push element (cdr (last list))))
+;;; --------------------------------------------
+;;; Functions (Setter): insert-front-open
+;;; --------------------------------------------
+;;; Description: 
+;;;  1. Insert element in front of OPEN List 
+;;; 
+;;; Input: Numerical or String 
+;;; Output: Return list contains inserted element
+;;; --------------------------------------------
+
+(defmethod insert-front-open (element)
+  (setf (open-list open) (push element (open-list open))))
+
+;;; --------------------------------------------
+;;; Functions (Setter): insert-back-open
+;;; --------------------------------------------
+;;; Description: 
+;;;  1. Insert element in back of OPEN List 
+;;; 
+;;; Input: Numerical or String 
+;;; Output: Return list contains inserted element
+;;; --------------------------------------------
+
+(defmethod insert-back-open (element)
+  (setf (open-list open) (reverse (cons element (reverse (open-list open))))))
+
+;;; ----------------------------------------------------
+;;; Functions (Getter) : Return number of length in list
+;;; ----------------------------------------------------
+(defmethod length-list (list)
+    (length list))
