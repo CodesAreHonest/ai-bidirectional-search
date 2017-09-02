@@ -28,6 +28,16 @@
     :initarg :close-list
     :accessor   close-list )))
 
+
+;;; ------------------------------------------------
+;;; Set error message with "Error Operation" 
+;;; ------------------------------------------------
+
+(defun preload ()
+  (defvar err-msg '(Error operation))
+  (defvar found nil)
+)
+
 ;;; ------------------------------------------------
 ;;; Function: Instantiate open list and close list
 ;;; ------------------------------------------------
@@ -100,7 +110,7 @@
 
 
 ;;; --------------------------------------------
-;;; Functions (Setter): open-list-length
+;;; Functions (Getter): open-list-length
 ;;; --------------------------------------------
 ;;; Input: NONE
 ;;; Output: Return number of element in OPEN list 
@@ -110,7 +120,7 @@
   (length (open-list open)))
 
 ;;; --------------------------------------------
-;;; Functions (Setter): close-list-length
+;;; Functions (Getter): close-list-length
 ;;; --------------------------------------------
 ;;; Input: NONE
 ;;; Output: Return number of element in CLOSE list 
@@ -120,7 +130,7 @@
   (length (close-list close)))
 
 ;;; --------------------------------------------
-;;; Functions (Setter): both-lists-length
+;;; Functions (Getter): both-lists-length
 ;;; --------------------------------------------
 ;;; Input: NONE
 ;;; Output: Return number of objects in both list
@@ -128,4 +138,61 @@
 
 (defmethod both-lists-length ()
   (format t "Length of OPEN list: ~D~%Length of CLOSE list: ~D~%"
-          (open-list-length) (close-list-length)))
+    (open-list-length) (close-list-length)))
+
+;;; --------------------------------------------
+;;; Functions (Setter): remove-element-open
+;;; --------------------------------------------
+;;; Input: NONE
+;;; Output: Remove front object in OPEN list
+;;; --------------------------------------------
+
+(defmethod remove-element-open (element)  
+  (let (find-elements-open element))
+  (if (eq nil found)      
+      (print err-msg) 
+          (setf (open-list open) (remove element (open-list open)))))
+
+;;; --------------------------------------------
+;;; Functions (Getter): find-elements-open
+;;; --------------------------------------------
+;;; Input: NONE
+;;; Output: Find element in OPEN list
+;;; --------------------------------------------
+
+(defmethod find-elements-open (element)
+  (if (not (eq nil (open-list open)))
+      (progn
+        (setf found (find element (open-list open)))
+        (if (eq nil found)
+          (setf found nil)
+        (setf found t))) (print err-msg)))
+  
+
+;;; --------------------------------------------
+;;; Functions (Setter): remove-element-close
+;;; --------------------------------------------
+;;; Input: NONE
+;;; Output: Remove front object in CLOSE list
+;;; --------------------------------------------
+
+(defmethod remove-element-close (element)  
+  (let (find-elements-close element))
+  (if (eq nil found)      
+      (print err-msg) 
+          (setf (close-list close) (remove element (close-list close)))))
+
+;;; --------------------------------------------
+;;; Functions (Getter): find-elements-close
+;;; --------------------------------------------
+;;; Input: NONE
+;;; Output: Find element in OPEN list
+;;; --------------------------------------------
+
+(defmethod find-elements-close (element)
+  (if (not (eq nil (close-list close)))
+      (progn
+        (setf found (find element (close-list close)))
+        (if (eq nil found)
+          (setf found nil)
+        (setf found t))) (print err-msg)))
