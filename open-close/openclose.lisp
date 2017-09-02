@@ -144,7 +144,7 @@
 ;;; Functions (Setter): remove-element-open
 ;;; --------------------------------------------
 ;;; Input: NONE
-;;; Output: Remove front object in OPEN list
+;;; Output: Remove specific object in OPEN list
 ;;; --------------------------------------------
 
 (defmethod remove-element-open (element)  
@@ -173,7 +173,7 @@
 ;;; Functions (Setter): remove-element-close
 ;;; --------------------------------------------
 ;;; Input: NONE
-;;; Output: Remove front object in CLOSE list
+;;; Output: Remove specific object in CLOSE list
 ;;; --------------------------------------------
 
 (defmethod remove-element-close (element)  
