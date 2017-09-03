@@ -147,7 +147,7 @@
 ;;; --------------------------------------------
 
 (defmethod remove-element-open (element)  
-  (let (find-elements-open element))
+  (find-elements-open element)
   (if (eq nil found)      
       (print err-msg) 
           (setf (open-list open) (remove element (open-list open)))))
