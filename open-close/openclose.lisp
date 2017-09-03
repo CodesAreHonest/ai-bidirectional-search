@@ -89,7 +89,7 @@
 
 (defmethod insert-front-close (element)
   (if (eq nil (close-list close))
-      (setf (close-list close) (make-list 1 :initial-element 'element))
+      (setf (close-list close) (make-list 1 :initial-element element))
     (setf (close-list close) (push element (close-list close)))))
 
 ;;; --------------------------------------------
@@ -147,7 +147,7 @@
 ;;; --------------------------------------------
 
 (defmethod remove-element-open (element)  
-  (let (find-elements-open element))
+  (find-elements-open element)
   (if (eq nil found)      
       (print err-msg) 
           (setf (open-list open) (remove element (open-list open)))))
