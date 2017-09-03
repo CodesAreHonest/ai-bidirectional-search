@@ -89,7 +89,7 @@
 
 (defmethod insert-front-close (element)
   (if (eq nil (close-list close))
-      (setf (close-list close) (make-list 1 :initial-element 'element))
+      (setf (close-list close) (make-list 1 :initial-element element))
     (setf (close-list close) (push element (close-list close)))))
 
 ;;; --------------------------------------------
