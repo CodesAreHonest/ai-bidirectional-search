@@ -165,7 +165,7 @@
         (setf found (find element (open-list open)))
         (if (eq nil found)
           (setf found nil)
-        (setf found t))) (print "Unable to perform find in open list due to empty)))
+        (setf found t))) (print "Unable to perform find in open list due to empty")))
   
 
 ;;; --------------------------------------------
