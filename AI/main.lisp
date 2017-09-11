@@ -22,8 +22,8 @@
 
 
 (defun main()
-  (compile-file "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/get-input.lisp" :load t)
-  (load "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/get-input.fasl")
+  (compile-file "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/input-test.lisp" :load t)
+  (load "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/input-test.fasl")
   (compile-file "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/check-duplicate.cl" :load t)
   (load "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/check-duplicate.fasl")
   (compile-file "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/check-end.cl" :load t)
