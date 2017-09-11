@@ -1,3 +1,13 @@
+;;; ------------------------------------------------------------
+;;; Function: The map
+;;; ------------------------------------------------------------
+;;; Description: 
+;;; 1. The map is make up with two-dimensional array with 21x21
+;;; 2. The map possess path cost values from nodes to nodes
+;;; ------------------------------------------------------------
+;;; Written by: Chong Hoe Ren  
+;;; ------------------------------------------------------------
+
 (setf map (make-array '(21 21)
 	:initial-contents '((NIL Arad Zerind Oradea Sibiu Fagaras Rimniou Timisoara Lugoj Mehadia Dobreta Craiova Pitesti Bucharest Giurgiu Urzioeni Hirsova Etorie Vaslui Iasi Neamt)
 						(Arad NIL 75 NIL 140 NIL NIL 118 NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL)

@@ -1,5 +1,7 @@
 ;;; ====================================
 ;;; File Description: CLOS for OPEN LIST 
+;;; ------------------------------------
+;;; Written by: Chai Ying Hua
 ;;; ====================================
 
 ;;; -----------------------------------------
@@ -29,11 +31,10 @@
 
 
 ;;; ------------------------------------------------
-;;; Set error message with "Error Operation" 
+;;; Declare variable for found 
 ;;; ------------------------------------------------
 
 (defun preload ()
-  (defvar err-msg '(Error operation))
   (defvar found nil)
 )
 
@@ -149,7 +150,7 @@
 (defmethod remove-element-open (element)  
   (find-elements-open element)
   (if (eq nil found)      
-      (print "Unable to perform remove in open list due to empty") 
+      (format t "Unable to perform remove in open list due to empty") 
           (setf (open-list open) (remove element (open-list open)))))
 
 ;;; --------------------------------------------
@@ -166,7 +167,7 @@
         (if (eq nil found)
           (setf found nil)
             (setf found t))
-            (print "Unable to perform find in open list due to empty"))))
+            (format t "Find is not performed in open list due to empty"))))
   
 ;;; --------------------------------------------
 ;;; Functions (Setter): remove-element-close
@@ -177,7 +178,7 @@
 (defmethod remove-element-close (element)  
   (let (find-elements-close element))
   (if (eq nil found)      
-      (print "Unable to perform remove in close list due to empty") 
+      (format t "Unable to perform remove in close list due to empty") 
           (setf (close-list close) (remove element (close-list close)))))
 ;;; --------------------------------------------
 ;;; Functions (Getter): find-elements-close
@@ -191,4 +192,4 @@
         (setf found (find element (close-list close)))
         (if (eq nil found)
           (setf found nil)
-        (setf found t))) (print "Unable to perform find in close list due to empty")))
+        (setf found t))) (format t "Unable to perform find in close list due to empty")))

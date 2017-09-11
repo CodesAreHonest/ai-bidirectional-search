@@ -1,7 +1,7 @@
-;;----------------------------------------
-;;Function: Main
-;;----------------------------------------
-;;Description: 
+;;-------------------------------------------------------------------------------------------------
+;; Function: Main
+;;-------------------------------------------------------------------------------------------------
+;; Description: 
 ;; 1. Call (preload), (make-open-list), (make-close-list) in openclose.lisp
 ;; 2. Insert "Arad" into Open-list
 ;; 3. gettype = type of search algo (BFS/DFS), from inputtest.lisp
@@ -16,12 +16,14 @@
 ;;       iv. check-duplicate, input = list of node, output = insert Child-node into Open-list, 
 ;;                                                           remove Parent-node from Open-list,
 ;;                                                           insert Parent-node into Close-list
-;;----------------------------------------
+;;-------------------------------------------------------------------------------------------------
+;; Written by: Chong Hoe Ren and Zhi Qing Kin
+;;-------------------------------------------------------------------------------------------------
 
 
 (defun main()
-  (compile-file "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/inputtest.lisp" :load t)
-  (load "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/inputtest.fasl")
+  (compile-file "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/get-input.lisp" :load t)
+  (load "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/get-input.fasl")
   (compile-file "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/check-duplicate.cl" :load t)
   (load "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/check-duplicate.fasl")
   (compile-file "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/check-end.cl" :load t)
@@ -38,22 +40,21 @@
   (load "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/map.fasl")
   (compile-file "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/openclose.lisp" :load t)
   (load "/Users/Lim/Documents/gitRepo/ai-bidirectional-search/AI/openclose.fasl")
+  
   (preload)
   (getinput)
-	(make-open-list 'Arad)
-	(make-close-list)
-	(when (string-equal gettype "dfs")
-		(progn
-			(insert-front-close for1)
-			(insert-front-close for2)
-		)
-	)
-	;;=========
-	;;Ascending / Descending
-	;;=========
-	(loop 
-		(check-duplicate (get-child (get-parent (get-current))))
-		(setf result (check-end))
-		(when (not (equal result NIL))(return result))
-	)
-)
+  (make-open-list 'Arad)
+  (make-close-list)
+  (when (string-equal gettype "dfs")
+    (progn
+      (insert-front-close for1)
+      (insert-front-close for2)))
+  
+;;======================
+;;Ascending / Descending
+;;======================
+  
+  (loop 
+    (check-duplicate (get-child (get-parent (get-current))))
+    (setf result (check-end))
+    (when (not (equal result NIL))(return result))))
