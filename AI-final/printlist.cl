@@ -1,4 +1,13 @@
+;;; ---------------------------------------------------------------------------
+;;;  Function: Print List 
+;;; ---------------------------------------------------------------------------
+;;;  Description: 
+;;;   1. The function print the containing element in Open and Close list 
+;;; ---------------------------------------------------------------------------
+;;;  Written by: Zhi Qing Kin
+;;; ---------------------------------------------------------------------------
+
+
 (defun printlist()
-    (print (open-list open))
-    (close-list close)
-    )
+  (print (open-list open))
+  (close-list close))

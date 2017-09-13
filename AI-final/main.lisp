@@ -61,8 +61,8 @@
     (check-duplicate (get-child (get-parent (get-current))))
     (setf result (check-end))
     (when (not (equal result NIL))(return result)))
-  (format t "~%")
+  (format t "~% Solution path = ")
   (printpath result)
-  (format t "~% Pathcost = ~A" pathcost)
-  (format t "~% Total Node = ~A" totalnode))
+  (format t "~% Pathcost      = ~A" pathcost)
+  (format t "~% Total Node    = ~A" totalnode))
    
