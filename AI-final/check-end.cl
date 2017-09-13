@@ -20,6 +20,6 @@
       (dolist (n list)
         (setf element (car list))
         (if (eq (check-goal element) T)
-            (return-from check-end "FOUND"))
+            (return-from check-end element))
         (setf list (cdr list)))
       (return-from check-end result))))

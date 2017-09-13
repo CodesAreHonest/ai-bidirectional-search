@@ -9,7 +9,7 @@
 ;;; ------------------------------------------------------------
 
 (setf map (make-array '(21 21)
-	:initial-contents '((NIL Arad Zerind Oradea Sibiu Fagaras Rimniou Timisoara Lugoj Mehadia Dobreta Craiova Pitesti Bucharest Giurgiu Urzioeni Hirsova Etorie Vaslui Iasi Neamt)
+	:initial-contents '((NIL Arad Zerind Oradea Sibiu Fagaras Rimniou_Viloea Timisoara Lugoj Mehadia Dobreta Craiova Pitesti Bucharest Giurgiu Urzioeni Hirsova Etorie Vaslui Iasi Neamt)
 						(Arad NIL 75 NIL 140 NIL NIL 118 NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL)
 						(Zerind 75 NIL 71 NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL)
 						(Oradea NIL 71 NIL 151 NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL NIL)

@@ -150,11 +150,7 @@
 (defmethod remove-element-open (element)  
   (find-elements-open element)
   (if (eq nil found)      
-<<<<<<< HEAD:open-close/openclose.lisp
-      (print "Unable to perform remove in open list due to empty") 
-=======
       (format t "Unable to perform remove in open list due to empty") 
->>>>>>> develop:AI/openclose.lisp
           (setf (open-list open) (remove element (open-list open)))))
 
 ;;; --------------------------------------------
@@ -170,12 +166,8 @@
         (setf found (find element (open-list open)))
         (if (eq nil found)
           (setf found nil)
-<<<<<<< HEAD:open-close/openclose.lisp
-        (setf found t))) (print "Unable to perform find in open list due to empty")))
-=======
             (setf found t))
             (format t "Find is not performed in open list due to empty"))))
->>>>>>> develop:AI/openclose.lisp
   
 ;;; --------------------------------------------
 ;;; Functions (Setter): remove-element-close
@@ -186,11 +178,7 @@
 (defmethod remove-element-close (element)  
   (let (find-elements-close element))
   (if (eq nil found)      
-<<<<<<< HEAD:open-close/openclose.lisp
-      (print "Unable to perform remove in close list due to empty") 
-=======
       (format t "Unable to perform remove in close list due to empty") 
->>>>>>> develop:AI/openclose.lisp
           (setf (close-list close) (remove element (close-list close)))))
 ;;; --------------------------------------------
 ;;; Functions (Getter): find-elements-close
@@ -204,8 +192,4 @@
         (setf found (find element (close-list close)))
         (if (eq nil found)
           (setf found nil)
-<<<<<<< HEAD:open-close/openclose.lisp
-        (setf found t))) (print "Unable to perform find in close list due to empty")))
-=======
         (setf found t))) (format t "Unable to perform find in close list due to empty")))
->>>>>>> develop:AI/openclose.lisp

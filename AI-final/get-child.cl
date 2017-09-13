@@ -17,7 +17,12 @@
 ;;----------------------------------------------------------------
 
 (defun get-child(x)
-  (loop for y from 1 to 20
+	(if (equal getacc 'asc)
+	(loop for y from 1 to 20
         if(not (equal (aref map x y) NIL))
-      collect (aref map 0 y)))
+		collect (aref map 0 y))
+	(loop for y from 20 downto 1
+		if(not (equal (aref map x y) NIL))
+		collect (aref map 0 y))))
+  
   
