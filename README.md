@@ -14,6 +14,8 @@ Table Of Contents
   * [Contributor](#contributor)
   * [Status](#status)
 
+***
+
 Highlight
 =========
 Software Resources 
@@ -32,6 +34,8 @@ Features
 5. The content of open and closed lists during tree traversal is updated. 
 6. Solution path of selected algorithm is displayed.
 7. Path cost of selected algorithm is displayed. 
+
+***
 
 About
 =====
