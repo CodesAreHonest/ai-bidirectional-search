@@ -7,6 +7,7 @@ Table Of Contents
 =================
 * [Artificial Intelligence Search Algorithms](#artificial-intelligence-search-algorithms)
 * [Table Of Contents](#table-of-contents)
+* [Getting Started](#getting-started)
 * [Highlights](#highlights)
   * [Software Resources](#software-resources)
   * [Features](#features)
@@ -15,6 +16,14 @@ Table Of Contents
   * [Status](#status)
 
 ***
+Getting Started
+===============
+The documentation contains:-  
+1. Program execution guides.  
+2. Source code with documentation and explanation.  
+3. Expected output on each execution.  
+
+Download the document **[here](https://github.com/CodesAreHonest/search-algorithm/blob/master/documentation/AI-assignment-documentation.pdf).**
 
 Highlight
 =========
