@@ -25,6 +25,8 @@ The documentation contains:-
 
 Download the document **[here](https://github.com/CodesAreHonest/search-algorithm/blob/master/documentation/AI-assignment-documentation.pdf).**
 
+***  
+
 Highlight
 =========
 Software Resources 
