@@ -53,8 +53,6 @@ About
 Contributor
 -----------
 - **Chai Ying Hua**
-- **Zhi Qing Kin**
-- **Chong Hoe Ren** 
 
 Status
 ------
